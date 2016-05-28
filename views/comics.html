@@ -1,0 +1,30 @@
+<div>
+	<table id="comics-tab" class="table table-hover" align="center">
+		<thead>
+			<tr>
+				<td>Título</td>
+				<td>Descripción</td>
+				<td>Imágen</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="character in controller.comics">
+				<td>{{comic.title}}</td>
+				<td class="comic-desc">{{comic.description}}</td>
+				<td class="image">
+					<div>
+						<img ng-src="{{comic.thumbnail.path}}/standard_medium.{{comic.thumbnail.extension}}">
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="text-center">
+		<ul class="pagination">
+			<li ng-class="{'active' : controller.currentPage == {{n}} }" ng-repeat="n in controller.pages">
+				<a ng-href="#/characters?page={{n}}">{{n}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

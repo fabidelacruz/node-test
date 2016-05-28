@@ -1,0 +1,46 @@
+<div id="charModal">
+  <div class="modal-header">
+    <h4 class="modal-title"><h3><b>{{modal.character.name}}</b></h3></h4>
+  </div>
+
+  <div class="modal-body">
+    <div class="image modal-left">
+      <img ng-src="{{modal.character.thumbnail.path}}/portrait_uncanny.{{modal.character.thumbnail.extension}}">
+    </div>
+      <div class="modal-right">
+        <table class="table table-bordered table-condensed">
+          <tbody>
+            <tr>
+              <td>
+                <h5><b><ins>Comics</ins></b></h5>
+              </td>
+              <td>
+                <p ng-repeat="comic in modal.character.comics.items">{{comic.name}}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><b><ins>Series</ins></b></h5>              
+              </td>
+              <td>
+                <p ng-repeat="serie in modal.character.series.items">{{serie.name}}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><b><ins>Stories</ins></b></h5>
+              </td>
+              <td>
+                <p ng-repeat="story in modal.character.stories.items">{{story.name}}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>  
+      </div>
+    <div class="clear"></div>
+  </div>
+  
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Close</button>
+  </div>
+</div>

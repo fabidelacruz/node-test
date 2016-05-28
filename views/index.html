@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="marvel">
+<head>
+	<title>Hello</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script type="text/javascript" src="js/angular.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls.js"></script>  
+	<script type="text/javascript" src="js/angular-route.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="javascripts/characterModal.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/routes.js"></script>
+</head>
+<body>
+	<div id="overlay" >
+		<img src="images/loader.gif" alt="Loading" /><br/>
+	</div>	
+	<nav id="nav" class="navbar navbar-inverse navbar-fixed-top" >
+		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="#">WebSiteName</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+      			<li class="active"><a href="#">Home</a></li>
+      			<li><a href="#/characters?page=1">Characters</a></li>
+      			<li><a href="#/comics">Comics</a></li> 
+      			<li><a href="#">Page 3</a></li> 
+    		</ul>
+  		</div>
+	</nav>
+	<div ng-view></div>
+</body>
+</html>
