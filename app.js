@@ -67,9 +67,14 @@ app.use(function(err, req, res, next) {
 
 
 
-var mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL ? process.env.OPENSHIFT_MONGODB_DB_URL : "mongodb://localhost:27017";
+var mongodb_connection_string = "mongodb://localhost:27017/marvel";
 
-db.connect(mongodb_connection_string + '/marvel', function(err) {
+if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+  mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL + 'nodejs';
+} 
+  
+
+db.connect(mongodb_connection_string, function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)
