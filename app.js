@@ -65,7 +65,11 @@ app.use(function(err, req, res, next) {
   });
 });
 
-db.connect('mongodb://localhost:27017/marvel', function(err) {
+
+
+var mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL ? process.env.OPENSHIFT_MONGODB_DB_URL : "mongodb://localhost:27017";
+
+db.connect(mongodb_connection_string + '/marvel', function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)
